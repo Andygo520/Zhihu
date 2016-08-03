@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by mac on 15-2-23.
+ *  该类用于管理收藏的阅读
  */
 public class DailyNewsDB {
     private DBHelper dbHelper;
