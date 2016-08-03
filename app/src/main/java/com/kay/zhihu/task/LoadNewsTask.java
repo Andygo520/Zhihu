@@ -2,10 +2,10 @@ package com.kay.zhihu.task;
 
 import android.os.AsyncTask;
 
+import com.kay.zhihu.adapter.NewsAdapter;
 import com.kay.zhihu.entity.News;
 import com.kay.zhihu.http.Http;
 import com.kay.zhihu.http.JsonHelper;
-import com.kay.zhihu.adapter.NewsAdapter;
 
 import org.json.JSONException;
 
@@ -34,7 +34,9 @@ public class LoadNewsTask extends AsyncTask<Void, Void, List<News>> {
     protected List<News> doInBackground(Void... params) {
         List<News> newsList = null;
         try {
-            newsList = JsonHelper.parseJsonToList(Http.getLastNewsList());
+            String json=  Http.getLastNewsList();
+//            Log.d("TAG",json);
+            newsList = JsonHelper.parseJsonToList(json);
         } catch (IOException | JSONException e) {
 
         } finally {
