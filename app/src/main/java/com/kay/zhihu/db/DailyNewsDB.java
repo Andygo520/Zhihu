@@ -30,7 +30,7 @@ public class DailyNewsDB {
         }
         return mDailyNewsDB;
     }
-
+//   将News对象添加到收藏
     public void saveFavourite(News news) {
         if (news != null) {
             ContentValues values = new ContentValues();

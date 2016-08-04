@@ -26,7 +26,9 @@ public class LoadNewsDetailTask extends AsyncTask<Integer, Void, NewsDetail> {
     protected NewsDetail doInBackground(Integer... params) {
         NewsDetail mNewsDetail = null;
         try {
-            mNewsDetail = JsonHelper.parseJsonToDetail(Http.getNewsDetail(params[0]));
+            String json=Http.getNewsDetail(params[0]);
+//            Log.i("DETAIL_TAG",json);
+            mNewsDetail = JsonHelper.parseJsonToDetail(json);
         } catch (IOException | JSONException e) {
 
         } finally {
